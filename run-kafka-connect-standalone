@@ -3,4 +3,4 @@ set -ueo pipefail
 
 ./properties-generate >connect-standalone.properties
 
-exec ./bin/connect-standalone connect-standalone.properties "$@"
+while true; do sleep 5; date; done | exec ./bin/connect-standalone connect-standalone.properties "$@"
