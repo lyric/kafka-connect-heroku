@@ -1,1 +1,1 @@
-connect: bin/connect-standalone etc/kafka/connect-console-sink.properties
+connect: bin/connect-standalone confluent.properties etc/kafka/connect-console-sink.properties
