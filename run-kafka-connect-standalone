@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -ueo pipefail
+
+./properties-generate >connect-standalone.properties
+
+exec ./bin/connect-standalone connect-standalone.properties "$@"
