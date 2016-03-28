@@ -2,3 +2,18 @@
 set -ueo pipefail
 
 echo bootstrap.servers=${KAFKA_URL//kafka:\/\//}
+
+cat <<PROPERTIES
+# copied from Kafka Connect distribution etc/kafka/connect-standalone.properties example file
+
+# The internal converter used for offsets and config data is configurable and must be specified, but most users will
+# always want to use the built-in default. Offset and config data is never visible outside of Copcyat in this format.
+internal.key.converter=org.apache.kafka.connect.json.JsonConverter
+internal.value.converter=org.apache.kafka.connect.json.JsonConverter
+internal.key.converter.schemas.enable=false
+internal.value.converter.schemas.enable=false
+
+offset.storage.file.filename=/tmp/connect.offsets
+# Flush much faster than normal, which is useful for testing/debugging
+offset.flush.interval.ms=10000
+PROPERTIES
