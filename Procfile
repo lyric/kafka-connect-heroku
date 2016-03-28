@@ -1,1 +1,1 @@
-web: bin/run-confluent
+web: bin/connect-standalone
