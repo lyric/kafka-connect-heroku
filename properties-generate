@@ -2,6 +2,7 @@
 set -ueo pipefail
 
 echo bootstrap.servers=${KAFKA_URL//kafka:\/\//}
+echo rest.port=$PORT
 
 cat <<PROPERTIES
 # copied from Kafka Connect distribution etc/kafka/connect-standalone.properties example file
