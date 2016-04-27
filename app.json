@@ -12,6 +12,10 @@
     "ARCHIVE_URL_OVERRIDE": {
       "description": "Used by Confluent buildpack to download latest Confluent Platform release",
       "value": "http://packages.confluent.io/archive/2.0/confluent-2.0.1-2.11.7.tar.gz"
+    },
+    "CONFLUENT_VERSION": {
+      "description": "Required by Confluent buildpack",
+      "value": "2.0.1"
     }
   },
   "addons": [
