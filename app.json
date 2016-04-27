@@ -1,0 +1,20 @@
+{
+  "name": "kafka-connect-heroku",
+  "description": "Hack project to get Kafka Connect running on Heroku",
+  "repository": "https://github.com/samstokes/kafka-connect-heroku",
+  "success_url": "/connectors",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-confluent-buildpack"
+    }
+  ],
+  "env": {
+    "ARCHIVE_URL_OVERRIDE": {
+      "description": "Used by Confluent buildpack to download latest Confluent Platform release",
+      "value": "http://packages.confluent.io/archive/2.0/confluent-2.0.1-2.11.7.tar.gz"
+    }
+  },
+  "addons": [
+    "heroku-kafka:beta-dev"
+  ]
+}
